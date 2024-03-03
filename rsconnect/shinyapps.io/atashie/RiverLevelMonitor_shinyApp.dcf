@@ -1,0 +1,12 @@
+name: RiverLevelMonitor_shinyApp
+title: RiverLevelMonitor_shinyApp
+username: atashie
+account: atashie
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 11225336
+bundleId: 8285990
+url: https://atashie.shinyapps.io/RiverLevelMonitor_shinyApp/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
