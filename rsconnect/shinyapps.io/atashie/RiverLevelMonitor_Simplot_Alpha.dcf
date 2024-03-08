@@ -1,0 +1,12 @@
+name: RiverLevelMonitor_Simplot_Alpha
+title: RiverLevelMonitor_Simplot_Alpha
+username: atashie
+account: atashie
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 11413278
+bundleId: 8339832
+url: https://atashie.shinyapps.io/RiverLevelMonitor_Simplot_Alpha/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

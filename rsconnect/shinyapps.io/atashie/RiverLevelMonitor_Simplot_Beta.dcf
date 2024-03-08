@@ -5,7 +5,7 @@ account: atashie
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 11301825
-bundleId: 8327187
+bundleId: 8344898
 url: https://atashie.shinyapps.io/RiverLevelMonitor_Simplot_Beta/
 version: 1
 asMultiple: FALSE
