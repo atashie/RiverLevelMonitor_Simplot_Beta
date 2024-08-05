@@ -51,8 +51,8 @@ ui <- fluidPage(
                              ),
                 mainPanel(width = 10,
                           fluidRow(
-                            withSpinner(mapviewOutput("myMap", height = "500px"), type=7)
-#                            withSpinner(leafletOutput("myMap", height = "500px"), type=7)
+#                            withSpinner(mapviewOutput("myMap", height = "500px"), type=7)
+                            withSpinner(leafletOutput("myMap", height = "500px"), type=7)
                           ),
                           hr(),
                           fluidRow(
@@ -106,7 +106,7 @@ server <- function(input, output, session) {
     
     thisCol = as.numeric(input$varType)   
     
-    useMapview = TRUE    
+    useMapview = FALSE    
     if(useMapview) {
       mapviewsCombined = 
        #      mapview(nodes_sf, lwd=4, lty=3, color='purple', alpha= 0.1, legend=FALSE)+
