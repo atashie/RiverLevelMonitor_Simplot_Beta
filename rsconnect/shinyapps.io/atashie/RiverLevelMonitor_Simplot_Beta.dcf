@@ -5,9 +5,14 @@ account: atashie
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 11301825
+<<<<<<< HEAD
 bundleId: 9179011
 url: https://atashie.shinyapps.io/RiverLevelMonitor_Simplot_Beta/
 when: 1727973023.38431
 lastSyncTime: 1727973023.38433
+=======
+bundleId: 8934259
+url: https://atashie.shinyapps.io/RiverLevelMonitor_Simplot_Beta/
+>>>>>>> d4a2f7350dc546c1b3e805f169900eeac8a609f7
 asMultiple: FALSE
 asStatic: FALSE

@@ -51,10 +51,15 @@ ui <- fluidPage(
                              ),
                 mainPanel(width = 10,
                           fluidRow(
+<<<<<<< HEAD
                             plotOutput("locationPlotter"),
                             downloadButton("downloadPlot", "Download Plot"),
                             img(src="./plotLegend.png", height=30, width=100),
                             textOutput("liveDataText")
+=======
+#                            withSpinner(mapviewOutput("myMap", height = "500px"), type=7)
+                            withSpinner(leafletOutput("myMap", height = "500px"), type=7)
+>>>>>>> d4a2f7350dc546c1b3e805f169900eeac8a609f7
                           ),
                           hr(),
                           fluidRow(
@@ -107,7 +112,7 @@ server <- function(input, output, session) {
     
     thisCol = as.numeric(input$varType)   
     
-    useMapview = TRUE    
+    useMapview = FALSE    
     if(useMapview) {
       mapviewsCombined = 
        #      mapview(nodes_sf, lwd=4, lty=3, color='purple', alpha= 0.1, legend=FALSE)+
