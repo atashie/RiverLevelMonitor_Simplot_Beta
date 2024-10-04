@@ -41,14 +41,14 @@ locationPlotter_f = function(
     abline(h=annualData$Q75, lwd=2, lty =5, col=adjustcolor('#EE6222', alpha.f=.05))
     abline(h=annualData$Q90, lwd=2, lty =5, col=adjustcolor('#EE6222', alpha.f=.01))
     lines(x=theDates, y = plotData$lastYear2, col=adjustcolor('royalblue2', alpha.f=.5), lty=3, lwd=3)
-    lines(x=theDates[260:285], y = rep(max(yRange), 26), col=adjustcolor('royalblue2', alpha.f=.5), lty=3, lwd=3)
-    text("2 years ago", x=theDates[330], y = max(yRange), col=adjustcolor('royalblue2', alpha.f=.5), lwd=3)
+#    lines(x=theDates[280:300], y = rep(max(yRange), 26), col=adjustcolor('royalblue2', alpha.f=.5), lty=3, lwd=3)
+#    text("2 years ago", x=theDates[330], y = max(yRange), col=adjustcolor('royalblue2', alpha.f=.5), lwd=3)
     lines(x=theDates, y = plotData$lastYear, col=adjustcolor('royalblue3', alpha.f=.7), lwd=3, lty=2)
-    lines(x=theDates[260:285], y = rep(max(yRange) - yNudger * 1.2, 26), col=adjustcolor('royalblue3', alpha.f=.7), lty=2, lwd=3)
-    text("1 year ago", x=theDates[330], y = max(yRange) - yNudger*1.2, col=adjustcolor('royalblue3', alpha.f=.7), lwd=3)
+#    lines(x=theDates[280:300], y = rep(max(yRange) - yNudger * 1.2, 26), col=adjustcolor('royalblue3', alpha.f=.7), lty=2, lwd=3)
+#    text("1 year ago", x=theDates[330], y = max(yRange) - yNudger*1.2, col=adjustcolor('royalblue3', alpha.f=.7), lwd=3)
     lines(x=theDates, y = plotData$this, col=adjustcolor('royalblue4', alpha.f=1), lwd=3, lty=1)
-    lines(x=theDates[260:285], y = rep(max(yRange) - yNudger * 2.4, 26), col=adjustcolor('royalblue4', alpha.f=1), lty=1, lwd=3)
-    text("current year", x=theDates[330], y = max(yRange) - yNudger*2.4, col=adjustcolor('royalblue4', alpha.f=1), lwd=3)
+#    lines(x=theDates[280:300], y = rep(max(yRange) - yNudger * 2.4, 26), col=adjustcolor('royalblue4', alpha.f=1), lty=1, lwd=3)
+#    text("current year", x=theDates[330], y = max(yRange) - yNudger*2.4, col=adjustcolor('royalblue4', alpha.f=1), lwd=3)
     
   } else {
     plot(theDates, plotData[,2],  ylim = yRange ,
@@ -81,14 +81,14 @@ locationPlotter_f = function(
     abline(h=customerInputTable$High_Level_ft[shippingLoc], lwd=2, lty =1, col=adjustcolor('purple4', alpha.f=.9))
     text("High Water", x=theDates[30], y=customerInputTable$High_Level_ft[shippingLoc] + (yNudger), col='purple4', lwd=3)
     lines(x=theDates, y = plotData$lastYear2, col=adjustcolor('royalblue2', alpha.f=.5), lty=3, lwd=3)
-    lines(x=theDates[260:285], y = rep(max(yRange), 26), col=adjustcolor('royalblue2', alpha.f=.5), lty=3, lwd=3)
-    text("2 years ago", x=theDates[330], y = max(yRange), col=adjustcolor('royalblue2', alpha.f=.5), lwd=3)
+#    lines(x=theDates[260:285], y = rep(max(yRange), 26), col=adjustcolor('royalblue2', alpha.f=.5), lty=3, lwd=3)
+#    text("2 years ago", x=theDates[330], y = max(yRange), col=adjustcolor('royalblue2', alpha.f=.5), lwd=3)
     lines(x=theDates, y = plotData$lastYear, col=adjustcolor('royalblue3', alpha.f=.7), lwd=3, lty=2)
-    lines(x=theDates[260:285], y = rep(max(yRange) - yNudger * 1.2, 26), col=adjustcolor('royalblue3', alpha.f=.7), lty=2, lwd=3)
-    text("1 year ago", x=theDates[330], y = max(yRange) - yNudger*1.2, col=adjustcolor('royalblue3', alpha.f=.7), lwd=3)
+#    lines(x=theDates[260:285], y = rep(max(yRange) - yNudger * 1.2, 26), col=adjustcolor('royalblue3', alpha.f=.7), lty=2, lwd=3)
+#    text("1 year ago", x=theDates[330], y = max(yRange) - yNudger*1.2, col=adjustcolor('royalblue3', alpha.f=.7), lwd=3)
     lines(x=theDates, y = plotData$this, col=adjustcolor('royalblue4', alpha.f=1), lwd=3, lty=1)
-    lines(x=theDates[260:285], y = rep(max(yRange) - yNudger * 2.4, 26), col=adjustcolor('royalblue4', alpha.f=1), lty=1, lwd=3)
-    text("current year", x=theDates[330], y = max(yRange) - yNudger*2.4, col=adjustcolor('royalblue4', alpha.f=1), lwd=3)
+#    lines(x=theDates[260:285], y = rep(max(yRange) - yNudger * 2.4, 26), col=adjustcolor('royalblue4', alpha.f=1), lty=1, lwd=3)
+#    text("current year", x=theDates[330], y = max(yRange) - yNudger*2.4, col=adjustcolor('royalblue4', alpha.f=1), lwd=3)
     
   }
   

@@ -51,15 +51,16 @@ ui <- fluidPage(
                              ),
                 mainPanel(width = 10,
                           fluidRow(
-                            withSpinner(mapviewOutput("myMap", height = "500px"), type=7)
-#                            withSpinner(leafletOutput("myMap", height = "500px"), type=7)
+                            plotOutput("locationPlotter"),
+                            downloadButton("downloadPlot", "Download Plot"),
+                            img(src="./plotLegend.png", height=30, width=100),
+                            textOutput("liveDataText")
                           ),
                           hr(),
                           fluidRow(
                             column(6,
-                                   plotOutput("locationPlotter"),
-                                   downloadButton("downloadPlot", "Download Plot"),
-                                   textOutput("liveDataText")
+                                   withSpinner(mapviewOutput("myMap", height = "500px"), type=7)
+                                   #                            withSpinner(leafletOutput("myMap", height = "500px"), type=7)
                             ),
                             column(6,
                                    DT::dataTableOutput("portfolioTable")

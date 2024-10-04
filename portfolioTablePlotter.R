@@ -1,5 +1,6 @@
 portfolioTablePlotter_f = function(portfolioTable = portfolioTable) {
-  df = DT::datatable(portfolioTable,
+  portfolioTable_sub = portfolioTable[,-c(2:6)]
+  df = DT::datatable(portfolioTable_sub,
                      options=list(
                        pageLength=100,
                        buttons = list('copy', 
