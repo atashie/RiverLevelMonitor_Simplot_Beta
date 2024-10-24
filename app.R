@@ -48,18 +48,13 @@ ui <- fluidPage(
                                           choiceValues = 1:nrow(customerInputTable),
                                           choiceNames = customerInputTable$Location_Name),
                              actionButton("rssButton", "Pull Live Data")
-                             ),
+                ),
                 mainPanel(width = 10,
                           fluidRow(
-<<<<<<< HEAD
                             plotOutput("locationPlotter"),
                             downloadButton("downloadPlot", "Download Plot"),
                             img(src="./plotLegend.png", height=30, width=100),
                             textOutput("liveDataText")
-=======
-#                            withSpinner(mapviewOutput("myMap", height = "500px"), type=7)
-                            withSpinner(leafletOutput("myMap", height = "500px"), type=7)
->>>>>>> d4a2f7350dc546c1b3e805f169900eeac8a609f7
                           ),
                           hr(),
                           fluidRow(
@@ -112,20 +107,20 @@ server <- function(input, output, session) {
     
     thisCol = as.numeric(input$varType)   
     
-    useMapview = FALSE    
+    useMapview = TRUE    
     if(useMapview) {
       mapviewsCombined = 
-       #      mapview(nodes_sf, lwd=4, lty=3, color='purple', alpha= 0.1, legend=FALSE)+
+        #      mapview(nodes_sf, lwd=4, lty=3, color='purple', alpha= 0.1, legend=FALSE)+
         mapview(availableGages_Q_sf, color='grey20', col.regions ='grey80', cex=2.75, legend=FALSE,
                 alpha = as.numeric(input$plotUsgsGages), alpha.regions=as.numeric(input$plotUsgsGages)
-                ) +
+        ) +
         mapview(mapData,
                 zcol=mapDataColNames[thisCol], color=thisPal, at = seq(0,100,10), lwd = 2, legend.opacity=0.8,layer.name="percentile",
                 popup = popupTable(mapData, zcol = c("Annual_Avg_Pct", "Season_Avg_Pct", "Raw_Value"))
-                ) +
+        ) +
         mapview(customerInputTable_sf, 
                 zcol = customerInputTableColNames[thisCol], col.regions=thisPal, at = seq(0,100,10), color = 'grey10',legend=FALSE, cex = 8
-                )  
+        )  
       #              popup = popupGraph(list(p2), width=400, height=200)) 
       #      mapview(mapCenter_sf, color='purple1', col.regions="yellow2", legend=FALSE) +
       mapviewsCombined@map %>% setView(lat=38, lng=-80, zoom = 5)
@@ -134,25 +129,25 @@ server <- function(input, output, session) {
       my_map <- leaflet() %>%
         addTiles() %>%
         setView(lng = -80, lat = 38, zoom = 5)  # Set the initial view
-
+      
       theseDataForCols = as.data.frame(mapData[, which(names(mapData) == mapDataColNames[thisCol])])[,1]      
       theseDataForPointCols = as.data.frame(customerInputTable_sf[, which(names(customerInputTable_sf) == customerInputTableColNames[thisCol])])[,1]      
       # Add your layers
       my_map %>%
         #addPolygons(data = nodes_sf, color = "purple", weight = 4, opacity = 0.1) %>%
-#        addPolygons(data = availableGages_Q_sf, color = "grey20", fillColor = "grey80",
- #                   fillOpacity = as.numeric(input$plotUsgsGages), opacity = as.numeric(input$plotUsgsGages)) %>%
+        #        addPolygons(data = availableGages_Q_sf, color = "grey20", fillColor = "grey80",
+        #                   fillOpacity = as.numeric(input$plotUsgsGages), opacity = as.numeric(input$plotUsgsGages)) %>%
         addPolylines(data = mapData,
-                    color = thatPal(theseDataForCols),#thisPal, #fillColor = thisPal,
-                    weight = 2,
-#                    layerId = mapDataColNames[thisCol],#fillOpacity = 0.8, 
-                    popup = popupTable(mapData, zcol = c("Annual_Avg_Pct", "Season_Avg_Pct", "Raw_Value"))) %>%
+                     color = thatPal(theseDataForCols),#thisPal, #fillColor = thisPal,
+                     weight = 2,
+                     #                    layerId = mapDataColNames[thisCol],#fillOpacity = 0.8, 
+                     popup = popupTable(mapData, zcol = c("Annual_Avg_Pct", "Season_Avg_Pct", "Raw_Value"))) %>%
         addCircleMarkers(data = customerInputTable_sf,
-                   fillColor = thatPal(theseDataForPointCols),
-                   fillOpacity = 0.8, color = 'grey20', weight = 0 ) %>%#,
-#                   popup = customerInputTableColNames) %>%
+                         fillColor = thatPal(theseDataForPointCols),
+                         fillOpacity = 0.8, color = 'grey20', weight = 0 ) %>%#,
+        #                   popup = customerInputTableColNames) %>%
         addLayersControl(baseGroups = c("providers$Esri.WorldImagery", "StreetMap", "Stamen"), overlayGroups = c("Markers"),
-                        position = "bottomleft") %>%
+                         position = "bottomleft") %>%
         addLegend(data = customerInputTable_sf,
                   position = "topright",
                   pal = thatPal,
@@ -210,7 +205,7 @@ server <- function(input, output, session) {
     )
   })
   
-
+  
 }
 
 shinyApp(ui, server)
