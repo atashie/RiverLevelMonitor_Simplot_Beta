@@ -59,8 +59,8 @@ ui <- fluidPage(
                           hr(),
                           fluidRow(
                             column(6,
-                                   withSpinner(mapviewOutput("myMap", height = "500px"), type=7)
-                                   #                            withSpinner(leafletOutput("myMap", height = "500px"), type=7)
+                                   #withSpinner(mapviewOutput("myMap", height = "500px"), type=7)
+                                   withSpinner(leafletOutput("myMap", height = "500px"), type=7)
                             ),
                             column(6,
                                    DT::dataTableOutput("portfolioTable")
@@ -107,7 +107,7 @@ server <- function(input, output, session) {
     
     thisCol = as.numeric(input$varType)   
     
-    useMapview = TRUE    
+    useMapview = FALSE    
     if(useMapview) {
       mapviewsCombined = 
         #      mapview(nodes_sf, lwd=4, lty=3, color='purple', alpha= 0.1, legend=FALSE)+
