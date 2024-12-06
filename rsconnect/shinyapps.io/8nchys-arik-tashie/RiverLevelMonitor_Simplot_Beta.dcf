@@ -5,7 +5,7 @@ account: 8nchys-arik-tashie
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 12979706
-bundleId: 9427571
+bundleId: 9467569
 url: https://climateai.shinyapps.io/RiverLevelMonitor_Simplot_Beta/
 asMultiple: FALSE
 asStatic: FALSE
